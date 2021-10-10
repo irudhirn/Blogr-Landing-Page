@@ -1,0 +1,127 @@
+.design {
+  font-family: "Overpass", sans-serif;
+  padding-top: 108px;
+  text-align: center;
+  //   margin-bottom: 160px;
+
+  @include breakpoint(tab-land) {
+    padding: 160px 0 0;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    color: $very-dark-blue;
+  }
+
+  .container {
+    @include breakpoint(tab-port) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @include breakpoint(tab-land) {
+      padding-top: 110px;
+      padding-bottom: 110px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__image {
+    @include breakpoint(tab-land) {
+      width: 45%;
+      flex: 1;
+      order: 2;
+    }
+    // margin-bottom: 60px;
+    height: 380px;
+    position: relative;
+
+    &--mobile-editor {
+      position: absolute;
+      height: auto;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include breakpoint(tab-land) {
+        display: none;
+      }
+    }
+
+    &--desktop-editor {
+      display: none;
+
+      @include breakpoint(tab-land) {
+        display: inline-block;
+        position: absolute;
+        width: auto;
+        top: -55%;
+        right: 0%;
+        transform: translateX(50%);
+        height: 200%;
+      }
+
+      @include breakpoint(desktop) {
+        top: -62%;
+        right: 5%;
+        transform: translateX(50%);
+        height: 230%;
+      }
+    }
+  }
+
+  &__text {
+    @include breakpoint(tab-land) {
+      //   width: 40%;
+      flex: 0.84;
+      text-align: left;
+    }
+
+    // text-align: center;
+    margin: 0 auto;
+
+    h3 {
+      // from 52% 77%
+      width: 60%;
+      margin: 0 auto 30px;
+      color: $very-dark-blue;
+      //   letter-spacing: 1.2px;
+
+      @include breakpoint(tab-land) {
+        width: 100%;
+
+        margin-bottom: 24px;
+      }
+    }
+
+    p {
+      width: 95%;
+      margin: 0 auto 52px;
+      line-height: 1.8;
+
+      @include breakpoint(tab-land) {
+        width: 100%;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    &--content {
+      &:first-of-type {
+        margin-bottom: 80px;
+      }
+
+      @include breakpoint(tab-port) {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      @include breakpoint(tab-land) {
+        width: 100%;
+      }
+    }
+  }
+}

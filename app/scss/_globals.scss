@@ -1,0 +1,110 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.5rem;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 60px 25px;
+  max-width: 1110px;
+  margin: 0 auto;
+
+  @include breakpoint(tab-land) {
+    padding: 60px 0;
+  }
+}
+
+h1 {
+  font-family: "Overpass", sans-serif;
+  color: $white;
+  font-size: 34px;
+  // big 50px
+
+  font-weight: 600;
+  padding: 0 10px;
+  margin-bottom: 20px;
+
+  @include breakpoint(tab-land) {
+    font-size: 50px;
+  }
+}
+
+h2 {
+  font-size: 22px;
+
+  @include breakpoint(tab-land) {
+    font-size: 30px;
+  }
+
+  // big 30px
+}
+
+h3 {
+  font-size: 22px;
+}
+
+p {
+  font-family: "Overpass", sans-serif;
+  // color: var(--white);
+  // font-size: 16px;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+  // padding: 0 20px;
+  // margin-bottom: 50px;
+}
+
+button {
+  width: 138px;
+  height: 48px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
+}
+
+.btn {
+  width: 138px;
+  height: 48px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Ubuntu", sans-serif;
+  border: 1px solid $white;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}

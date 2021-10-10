@@ -1,0 +1,143 @@
+.phones {
+  height: 200px;
+  // width: 100%;
+
+  .container {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+    max-width: 1110px;
+
+    // @include breakpoint(tab-land) {
+    //   padding: 0 50px 0;
+    // }
+  }
+
+  &__image {
+    position: absolute;
+    width: 375px;
+    // height: auto;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+
+    @include breakpoint(tab-land) {
+      width: 460px;
+      top: 175px;
+      left: 0px;
+      transform: translateX(0);
+    }
+
+    @include breakpoint(desktop) {
+      width: 550px;
+      top: 130px;
+    }
+  }
+}
+
+.state {
+  font-family: "Overpass", sans-serif;
+  color: $white;
+  background-image: url("../../images/bg-pattern-circles.svg");
+  background-size: 600px auto;
+  background-position: center -230px;
+  background-repeat: no-repeat;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  overflow: hidden;
+  height: 630px;
+
+  position: relative;
+  //   padding-top: 170px;
+  //   padding-bottom: 60px;
+
+  @include breakpoint(mobile) {
+    height: 550px;
+  }
+
+  @include breakpoint(tab-land) {
+    height: 400px;
+    padding-top: 0px;
+    padding-bottom: 0;
+    //   background-size: 155%;
+    background-size: 950px auto;
+    //   background-position: center -350%;
+    background-position: -250px -400px;
+    background-repeat: no-repeat;
+  }
+
+  @include breakpoint(desktop) {
+    // padding-top: 40px;
+    // padding-bottom: 80px;
+    //   background-size: 155%;
+    background-size: 950px auto;
+    //   background-position: center -350%;
+    background-position: -210px -460px;
+    background-repeat: no-repeat;
+  }
+
+  &::before {
+    overflow: hidden;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $very-dark-gray-blue;
+
+    z-index: -1;
+  }
+
+  .container {
+    position: relative;
+    height: 100%;
+    padding-top: 230px;
+    padding-bottom: 120px;
+
+    @include breakpoint(tab-land) {
+      padding-top: 90px;
+      padding-bottom: 80px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    max-width: 525px;
+
+    @include breakpoint(mobile) {
+      width: 85%;
+      margin: 0 auto;
+    }
+
+    @include breakpoint(tab-land) {
+      width: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+
+      padding-right: 50px;
+      text-align: left;
+      float: right;
+    }
+
+    @include breakpoint(desktop) {
+      padding-right: 0;
+      padding-left: 50px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+  }
+}

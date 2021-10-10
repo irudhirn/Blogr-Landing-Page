@@ -1,0 +1,26 @@
+@mixin breakpoint($width) {
+  @if $width == mobile {
+    @media (min-width: 481px) {
+      // 481px
+      @content;
+    }
+  }
+  @if $width == tab-port {
+    @media (min-width: 768px) {
+      // 640px
+      @content;
+    }
+  }
+  @if $width == tab-land {
+    @media (min-width: 900px) {
+      // 900px
+      @content;
+    }
+  }
+  @if $width == desktop {
+    @media (min-width: 1201px) {
+      // 1440px
+      @content;
+    }
+  }
+}

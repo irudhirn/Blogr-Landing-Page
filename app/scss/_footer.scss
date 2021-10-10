@@ -1,0 +1,92 @@
+.footer {
+  font-family: "Ubuntu", sans-serif;
+  background-color: $very-dark-black-blue;
+  border-top-right-radius: 100px;
+  color: $white;
+  text-align: center;
+
+  .container {
+    @include breakpoint(tab-land) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @include breakpoint(desktop) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__image {
+    &--logo {
+      height: 34px;
+      width: auto;
+    }
+    margin-bottom: 76px;
+
+    @include breakpoint(tab-land) {
+      flex: 1;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    @include breakpoint(tab-land) {
+      flex: 3;
+      width: 100%;
+      text-align: left;
+    }
+
+    @include breakpoint(tab-port) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    &--lists {
+      &:not(:last-of-type) {
+        margin-bottom: 55px;
+
+        @include breakpoint(tab-port) {
+          margin-bottom: 0;
+        }
+      }
+
+      @include breakpoint(tab-port) {
+        flex: 1;
+        width: 100%;
+      }
+
+      @include breakpoint(tab-land) {
+        // text-align: left;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 26px;
+      }
+
+      ul {
+        li {
+          padding: 10px 0;
+
+          a {
+            font-size: 16px;
+            color: $grayish-blue;
+
+            &:hover,
+            &:active {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

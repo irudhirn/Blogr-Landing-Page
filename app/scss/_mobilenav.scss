@@ -1,0 +1,114 @@
+.mobile__menu {
+  position: absolute;
+  top: 126px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $white;
+  z-index: 5;
+  width: 86.6%;
+  text-align: center;
+  padding: 36px 0;
+  border-radius: 5px;
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+  box-shadow: 0 30px 30px hsla(207, 13%, 34%, 0.3);
+  animation: fade-in 0.3s ease forwards;
+
+  &:not(.active) {
+    animation: fade-out 0.3s ease forwards;
+  }
+
+  &--links {
+    font-weight: 600;
+
+    .arrow {
+      margin-left: 8px;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 25px;
+    }
+
+    &.active {
+      color: $very-dark-grayish-blue;
+
+      .arrow {
+        transform: rotateX(180deg);
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:not(.active) .link-list ul {
+      display: none;
+    }
+
+    .link-list ul {
+      list-style-type: none;
+      padding: 30px 0 30px;
+      background-color: hsla(240, 2%, 79%, 0.35);
+      width: 90%;
+      margin: 24px auto 0;
+      border-radius: 5px;
+      animation: fade-in 0.3s ease forwards;
+
+      li {
+        padding: 10px;
+
+        a {
+          color: $very-dark-grayish-blue;
+
+          &:hover,
+          &:active {
+            color: $very-dark-black-blue;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  &--login {
+    width: 90%;
+    border-top: 1px solid $grayish-blue;
+    margin: 00 auto 0;
+    padding-top: 20px;
+
+    button {
+      border: none;
+    }
+
+    .login {
+      background-color: transparent;
+      margin-bottom: 8px;
+      color: $very-dark-blue;
+      font-family: "Overpass", sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+
+      &:hover,
+      &:active {
+        color: $light-red-text;
+        background-color: $white;
+      }
+    }
+
+    .sign-up {
+      background-image: linear-gradient(
+        to right,
+        $very-light-red-bg,
+        $light-red-bg
+      );
+      color: $white;
+
+      &:hover,
+      &:active {
+        background-color: light-red-text;
+        color: $white;
+      }
+    }
+  }
+
+  @include breakpoint(tab-land) {
+    display: none;
+  }
+}
